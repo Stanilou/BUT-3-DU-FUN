@@ -1,0 +1,131 @@
+# TD N°1 : BIG DATA - CACHING
+
+## Exercice n°1
+
+    tt0325980 --> miss 
+    tt1477834 --> miss
+    tt0325980 --> hit
+    tt1477834 --> hit
+    tt0325980 --> hit
+    tt1477834 --> hit
+    tt0325980 --> hit
+
+    1 - What is the number of cache hits ?   
+
+        Il y a 5 hits.
+
+    2 - What is the number of cache misses ?
+
+        Il y a 2 misses.
+
+    3 - What is the content of the cache at the end ?
+
+        Le cache contient : tt0325980 et tt1477834.
+
+## Exercice n°2 
+
+    Avec LRU :
+
+    1 - What is the number of cache hits/misses with a cache of size 3 ?
+
+        tt0468569 --> miss
+        tt0108052 --> miss
+        tt0068646 --> miss cancel
+        tt0111161 --> miss cancel
+        tt0468569 --> hit
+        tt0108052 --> hit
+        tt0110912 --> miss cancel
+        tt0468569 --> hit
+        tt0108052 --> hit
+        tt0068646 --> miss cancel
+        tt0111161 --> miss cancel
+        tt0110912 --> miss
+
+        Il y a 4 hits et 8 misses.
+
+    2 - What is the number of cache hits/misses with a cache of size 4 ?
+        
+        tt0468569 --> miss
+        tt0108052 --> miss
+        tt0068646 --> miss 
+        tt0111161 --> miss cancel
+        tt0468569 --> hit
+        tt0108052 --> hit
+        tt0110912 --> miss cancel
+        tt0468569 --> hit
+        tt0108052 --> hit
+        tt0068646 --> hit
+        tt0111161 --> miss cancel
+        tt0110912 --> miss
+
+        Il y a 5 hits et 7 misses.
+
+    Avec FIFO :
+
+    1 - What is the number of cache hits/misses with a cache of size 3 ?
+
+        tt0468569 --> miss cancel
+        tt0108052 --> miss cancel
+        tt0068646 --> miss cancel
+        tt0111161 --> miss cancel
+        tt0468569 --> miss cancel
+        tt0108052 --> miss cancel
+        tt0110912 --> miss 
+        tt0468569 --> hit
+        tt0108052 --> hit
+        tt0068646 --> miss
+        tt0111161 --> miss
+        tt0110912 --> hit
+
+        Il y a 3 hits et 9 misses.
+
+    2 - What is the number of cache hits/misses with a cache of size 4 ?
+
+        tt0468569 --> miss cancel
+        tt0108052 --> miss cancel
+        tt0068646 --> miss cancel
+        tt0111161 --> miss cancel
+        tt0468569 --> hit 
+        tt0108052 --> hit 
+        tt0110912 --> miss cancel
+        tt0468569 --> miss cancel
+        tt0108052 --> miss
+        tt0068646 --> miss
+        tt0111161 --> miss
+        tt0110912 --> miss
+
+        Il y a 2 hits et 10 misses.
+
+## Exercice n°3 :
+
+    Full result caching / Query caching :
+
+    1 - idimdb, title, release, runtime, budget, revenue, poster, overview, rating
+        tt0325980,Pirates of the Caribbean: The Curse of the Black Pearl,2003-07-09,143,140000000,655011224,https://image.tmdb.org/t/p/original/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg,8
+        tt1477834,Aquaman,2018-07-06,143,160000000,1148461807,https://image.tmdb.org/t/p/original/xLPffWMhMj1l5,6.9
+
+    2 - {
+            "idmbd" : "tt0325980",
+            "title" : "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "release" : "2003-07-09",
+            "runtime" : "143",
+            "budget" : "140000000",
+            "revenue" : "655011224",
+            "poster" : "https://image.tmdb.org/t/p/original/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
+            "rating" : "8",
+        },
+        {
+            "idmbd" : "tt1477834",
+            "title" : "Aquaman",
+            "release" : "2018-07-06",
+            "runtime" : "143",
+            "budget" : "160000000",
+            "revenue" : "1148461807",
+            "poster" : "https://image.tmdb.org/t/p/original/xLPffWMhMj1l5"
+            "rating" : "6.9",
+        }
+
+    Individual result caching / Tuple caching :
+
+    1 - idimdb, title, release, runtime, budget, revenue, poster, rating
+        tt0029583,Snow White and the Seven Dwarfs,1937-12-21,83,1488423,184925486, https://image.tmdb.org/t/p/original1P9eGGlT7eV7kAAvvSh9jfygr1C.jpg,7.6
