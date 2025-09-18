@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Ajax</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>The XMLHttpRequest Object</h1>
+            <button type="button" onclick="loadPage()">Request data</button>
+            <button type="button" onclick="loadOne()">Request data 2</button>
+            <button type="button" onclick="createOne()">Create one</button>
+            <button type="button" onclick="deleteOne()">Delete one</button>
+            <button type="button" onclick="modifyOne()">Modify one</button>
+            <button type="button" onclick="modifyOne2()">Modify one 2</button>
+        <p id="demo"></p>
+        
+        <script>
+        function loadPage() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "https://reqres.in/api/users?page=2", true);
+            xhttp.setRequestHeader("x-api-key", "reqres-free-v1");
+            xhttp.send();
+        }
+        function loadOne() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "https://reqres.in/api/users?id=2", true);
+            xhttp.setRequestHeader("x-api-key", "reqres-free-v1");
+            xhttp.send();
+        }
+        function createOne() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 201) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("POST", "https://reqres.in/api/users", true);
+            xhttp.setRequestHeader("x-api-key", "reqres-free-v1");
+            xhttp.setRequestHeader("Content-Type", "application/json");
+            xhttp.send(JSON.stringify({name:"Stanislas", job:"Chômeur semi-professionnel"}));
+        }
+        function deleteOne() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 204) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("POST", "https://reqres.in/api/users", true);
+            xhttp.setRequestHeader("x-api-key", "reqres-free-v1");
+            xhttp.setRequestHeader("Content-Type", "application/json");
+            xhttp.send(JSON.stringify({name:"Stanislas", job:"Chômeur semi-professionnel"}));
+        }
+        function modifyOne() {}
+        function modifyOne2() {}
+        </script>
+    </body>
+
+</html>
