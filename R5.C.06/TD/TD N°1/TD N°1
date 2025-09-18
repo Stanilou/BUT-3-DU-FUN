@@ -1,0 +1,87 @@
+# TD N°1 : MODÉLISATION UML – DIAGRAMME DE CLASSES POUR LA RÉALISATION D'UNE BDD
+
+## Exercice n°1 : Contraintes
+
+    Question n°1 :
+        
+        +----------------------------------+        +----------------------------------+
+        |             Metropole            |        |              Commune             |
+        +----------------------------------+        +----------------------------------+
+        |-nbHab : INTEGER {nbHab >= 400000}|        |-nbHab : INTEGER {nbHab < 2000}   |
+        +----------------------------------+        +----------------------------------+
+
+    Question n°2 :
+
+        +----------------------------+
+        |           Electeur         | 
+        +----------------------------+
+        |-numE : STRING {frozen}     |
+        |-nomE : STRING              |
+        |-prenomE : STRING           |
+        |-dateN : DATE               |
+        |-ageE : INTEGER {ageE >= 18}|
+        +----------------------------+
+
+    Question n°3 :
+
+        +----------------------------+                                                    +----------------------------+
+        |           Electeur         |              habite                                |        Circonscription     |
+        +----------------------------+---------------------------/\------------/\---------+----------------------------+
+        |-numE : STRING              |            administre     || SUBSET     ||         |-libellé : STRING           |
+        |-nomE : STRING              |--------┬------------------┴┴------------||---------|-nbHab: INTEGER             |
+        |-prenomE : STRING           |    XOR |  co-administre                 || SUBSET  +----------------------------+
+        |-dateN : DATE               |--------┴--------------------------------┴┴---------|
+        +----------------------------+                                                    
+
+## Exercice 2 : Identifiants
+
+    Question n°1 :
+
+        Les identifiants de la relation appartenir sont : -numEleve et -codeClasse.
+
+    Question n°2 :
+
+        Un élève ne peut pas redoubler dans la même classe car son numéro d'élève et son code de classe seront doublés.
+
+    Question n°3 :
+
+        +------------------+                                    +--------------------+
+        |     Electeur     | 1..*        Appartenir        1..* |        Classe      |
+        +------------------+-----------------/\-----------------+--------------------|
+        |-numEleve : STRING|-----------------\/-----------------|-codeClasse : STRING|
+        |-nom : STRING     |                 ||                 +--------------------+
+        |-prenom: STRING   |                 ||
+        +------------------+                 ||
+                                             ||   
+                                             ||  1..* 
+                                    +-------------------+
+                                    |       Année       |
+                                    +-------------------+
+                                    |-annéeClasse : DATE|
+                                    +-------------------+
+
+## Exercice 3 : Lecture et modification de diagramme de classes
+
+    Question n°1 :
+
+        Les identifiants des tables sont : -nomDuClub ; -numMatch ; -idJoueur et -numJournée.
+        Les identifiants de la relation Rencontre sont : -nomDuClub et -numMatch.
+
+    Question n°2 :
+
+        A - +------------------+
+            |       Club       |
+            +------------------+
+            |-sigle : STRING   |
+            |-nomClub : STRING |
+            |-nomVille : STRING|
+            +------------------+
+
+        B - +------------------------------+
+            |              Ville           |
+            +------------------------------+
+            |-codePostal : INTEGER {frozen}|
+            |-nomVille : STRING            |
+            |-nombreHab : INTEGER          |
+            |-numDept : INTEGER            |
+            +------------------------------+
