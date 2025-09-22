@@ -1,0 +1,39 @@
+<!DOCTYPE html>*
+
+<html>
+    <head>
+    <!-- voir https://gsap.com/docs/v3/Installation#install-helper -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    </head>
+
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 16 9"></svg>
+
+        <script>
+        // ici, il y aura les scripts JS pour créer, modifier et animer l'image SVG
+            class Voilier {
+                constructor(parent) {
+                    this.g = parent.appendElement("g")
+                    this.appendElement("path", {
+                        d: "M 3 0 L 0 -4.5 L -2 0 Z",
+                        fill: "White",
+                        stroke: "Black",
+                        'stroke-width': 0.02
+                    })
+                    this.g.appendElement("rect", {
+                        x: 0,
+                        y: -4.5,
+                        width: 0.2,
+                        height: 5,
+                        fill: "#E0E0E0"
+                    })
+                    this.g.appendElement("path", {
+                        d: "M 3 0 L -2.5 0.3 L -3 1.5 L 2 1.5 Z",
+                        fill: "Crimson"
+                    })
+                }
+            }
+        </script>
+    </body>
+
+</html>
