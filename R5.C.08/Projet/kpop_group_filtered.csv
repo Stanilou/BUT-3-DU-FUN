@@ -1,0 +1,121 @@
+group_id,group_name,company,status,group_type,music_show_awards,end_year_awards,physical_sales,organic_youtube_views,debut_date,sun_sign
+1,BIGBANG,YG Entertainment Inc.,Inactive,Boy Group,84,46,3514210,4589887632,2006-08-19,Leo
+2,Busker Busker,Chungchun Music,Inactive,Boy Group,10,10,344002,44241494,2012-04-02,Aries
+3,NewJeans,ADOR,Inactive,Girl Group,35,32,8278782,2296351136,2022-07-22,Cancer
+4,Sistar,Starship Entertainment,Inactive,Girl Group,48,25,137519,957775756,2010-06-03,Gemini
+5,Miss A,JYP Entertainment Corp.,Inactive,Girl Group,16,12,111748,502828620,2010-06-30,Cancer
+6,GFriend,Source Music,Inactive,Girl Group,71,13,999591,1145370316,2015-01-15,Capricorn
+7,Wonder Girls,JYP Entertainment Corp.,Inactive,Girl Group,32,17,309310,586428007,2007-02-13,Aquarius
+8,I.O.I,YMC Entertainment,Inactive,Girl Group,9,3,276039,297420417,2016-05-16,Taurus
+9,Wanna One,Swing Entertainment,Inactive,Boy Group,49,21,3687191,578452979,2017-08-07,Leo
+10,IZ*ONE,Pledis Entertainment,Inactive,Girl Group,26,7,2101206,1051316370,2018-10-29,Scorpio
+11,NU'EST,Pledis Entertainment,Inactive,Boy Group,17,5,1176812,439100514,2012-03-15,Pisces
+12,Beast,Cube Entertainment,Inactive,Boy Group,47,28,1087745,657013261,2009-10-15,Libra
+13,B.A.P,TS entertainment,Inactive,Boy Group,8,4,911467,301681895,2012-01-26,Aquarius
+14,WJSN,Starship Ent. + Yue Hua Ent.,Inactive,Girl Group,9,1,850460,241820625,2016-02-25,Pisces
+15,VICTON,IST Entertainment,Inactive,Boy Group,3,0,750171,180700492,2016-11-09,Scorpio
+16,LOONA,Blockberry Creative,Inactive,Girl Group,4,1,698360,365528056,2018-08-20,Leo
+17,PENTAGON,Cube Entertainment,Inactive,Boy Group,2,0,650777,733366148,2016-10-10,Libra
+18,f(x),SM Entertainment Co. Ltd.,Inactive,Girl Group,33,10,548777,560004408,2009-08-03,Virgo
+19,Block B,Seven Seasons,Inactive,Boy Group,8,1,418220,353939253,2011-04-14,Aries
+20,SS501,DSP Media,Inactive,Boy Group,12,5,398819,225868285,2005-06-08,Gemini
+21,Weeekly,IST Entertainment,Inactive,Girl Group,0,1,314973,318429943,2020-06-30,Cancer
+22,AOA,FNC Entertainment,Inactive,Girl Group,10,3,223475,872310873,2012-07-29,Leo
+23,4Minute,Cube Entertainment,Inactive,Girl Group,23,7,205088,818287184,2009-06-15,Gemini
+24,Girl's Day,Dream T Entertainment Co.,Inactive,Girl Group,12,4,127226,553105564,2010-07-07,Cancer
+25,Trouble Maker,Cube Entertainment,Inactive,Co-ed Group,12,2,66974,248786656,2011-12-01,Sagittarius
+26,Momoland,MLD Entertainment,Inactive,Girl Group,11,4,66422,1881942223,2016-11-10,Scorpio
+27,CLC,Cube Entertainment,Inactive,Girl Group,2,0,65774,420286429,2015-03-19,Pisces
+28,Crayon Pop,Chrome Entertainment,Inactive,Girl Group,2,3,36845,188584801,2012-07-18,Cancer
+29,H.O.T,SM Entertainment Co. Ltd.,Inactive,Boy Group,0,0,0,16197860,1996-09-07,Virgo
+30,BTS,Big Hit Music,Active,Boy Group,164,155,39804599,29044923025,2013-06-12,Gemini
+31,IVE,Starship Entertainment,Active,Girl Group,69,32,10331738,1919878808,2021-12-01,Sagittarius
+32,Twice,JYP Entertainment Corp.,Active,Girl Group,122,44,15425679,12731247595,2015-10-20,Libra
+33,I-DLE,Cube Entertainment,Active,Girl Group,70,25,7167954,3485625030,2018-05-02,Taurus
+34,BLACKPINK,YG Entertainment Inc.,Active,Girl Group,60,26,6222952,20659327442,2016-08-08,Leo
+35,aespa,SM Entertainment Co. Ltd.,Active,Girl Group,36,40,8692369,2565845921,2020-11-17,Scorpio
+36,2NE1,YG Entertainment Inc.,Active,Girl Group,43,24,690868,1758948217,2009-05-06,Taurus
+37,Akmu,YG Entertainment Inc.,Active,Co-ed Group,24,12,95174,664768815,2014-04-07,Aries
+38,Red Velvet,SM Entertainment Co. Ltd.,Active,Girl Group,85,19,5263236,3395601490,2014-08-03,Leo
+39,MAMAMOO,RBW,Active,Girl Group,42,16,1260698,2430600277,2014-06-18,Gemini
+40,ILLIT,BELift Lab (HYBE + CJ E&M),Active,Girl Group,14,6,1188735,501071955,2024-03-25,Aries
+41,Day6,Studio J,Active,Boy Group,8,5,911165,661623354,2015-09-06,Virgo
+42,iKON,143 Entertainment,Active,Boy Group,27,13,855547,1941510513,2015-09-15,Virgo
+43,Epik High,William Morris Endeavor,Active,Boy Group,10,19,453705,203119088,2003-10-23,Libra
+44,Davichi,CAM with us,Active,Girl Group,20,11,88630,540722882,2008-01-28,Aquarius
+45,Urban Zakapa,Abyss Company,Active,Co-ed Group,0,1,19083,159408901,2009-07-29,Leo
+46,SEVENTEEN,Pledis Entertainment,Active,Boy Group,81,58,44852696,4148375139,2015-05-26,Gemini
+47,Stray Kids,JYP Entertainment Corp.,Active,Boy Group,37,21,26960121,6827532870,2018-03-26,Aries
+48,NCT Dream,SM Entertainment Co. Ltd.,Active,Boy Group,44,22,19797445,1472819931,2016-08-24,Virgo
+49,TXT,Big Hit Music,Active,Boy Group,26,22,17725723,2297913325,2019-03-04,Pisces
+50,ENHYPEN,BELift Lab (HYBE + CJ E&M),Active,Boy Group,18,18,14608629,1661379251,2020-11-30,Sagittarius
+51,NCT 127,SM Entertainment Co. Ltd.,Active,Boy Group,40,16,14088822,1824491639,2016-07-07,Cancer
+52,EXO,SM Entertainment Co. Ltd.,Active,Boy Group,114,74,13666727,4321959633,2012-04-08,Aries
+53,ATEEZ,KQ Entertainment,Active,Boy Group,25,10,11005911,1709116300,2018-10-24,Scorpio
+54,ZEROBASEONE,WAKEONE + Swing Ent.,Active,Boy Group,15,14,7718756,183758174,2023-07-10,Cancer
+55,THE BOYZ,ONE HUNDRED,Active,Boy Group,30,7,6415237,589169407,2017-12-06,Sagittarius
+56,Super Junior,SM Entertainment Co. Ltd.,Active,Boy Group,53,49,6353392,1992205492,2005-11-06,Scorpio
+57,ITZY,JYP Entertainment Corp.,Active,Girl Group,48,6,6165313,3777844226,2019-02-11,Aquarius
+58,LE SSERAFIM,Source Music,Active,Girl Group,35,12,6040826,1824290534,2022-05-02,Taurus
+59,NMIXX,SQU4D,Active,Girl Group,11,2,5993258,767790119,2022-02-22,Pisces
+60,TREASURE,YG Entertainment Inc.,Active,Boy Group,3,10,5267437,1332300968,2020-08-07,Leo
+61,RIIZE,SM Entertainment Co. Ltd.,Active,Boy Group,11,10,4724154,305789519,2023-09-04,Virgo
+62,GOT7,Kakao M,Active,Boy Group,33,17,4576219,3196672830,2014-01-15,Capricorn
+63,MONSTA X,Starship Entertainment,Active,Boy Group,23,22,4260660,1290172995,2015-05-14,Taurus
+64,BOYNEXTDOOR,KOZ Entertainment,Active,Boy Group,13,4,4225941,256799963,2023-05-23,Gemini
+65,Girl's Generation,SM Entertainment Co. Ltd.,Active,Girl Group,94,45,3630065,3280045842,2007-08-05,Leo
+66,TVXQ!,SM Entertainment Co. Ltd.,Active,Boy Group,23,30,3392154,650637741,2003-12-26,Capricorn
+67,NCT Wish,SM Entertainment Co. Ltd.,Active,Boy Group,7,3,3132329,91169480,2024-02-21,Pisces
+68,SHINee,SM Entertainment Co. Ltd.,Active,Boy Group,69,34,3125627,1308559512,2008-05-25,Gemini
+69,CRAVITY,Starship Entertainment,Active,Boy Group,7,2,2355548,173403283,2020-04-04,Aries
+70,TWS,Pledis Entertainment,Active,Boy Group,14,5,2324344,168155469,2024-01-22,Aquarius
+71,WayV,SM Entertainment Co. Ltd.,Active,Boy Group,4,2,2147394,450508649,2019-01-17,Capricorn
+72,STAYC,High Up Entertainment,Active,Girl Group,21,7,1896165,531810543,2020-11-12,Scorpio
+73,Infinite,INFINITE Company,Active,Boy Group,43,17,1831730,433172581,2010-06-09,Gemini
+74,SF9,FNC Entertainment,Active,Boy Group,6,0,1801596,321151700,2016-10-05,Libra
+75,ASTRO,Fantagio,Active,Boy Group,13,2,1782644,533442234,2016-02-23,Pisces
+76,BABYMONSTER,YG Entertainment Inc.,Active,Girl Group,1,2,1747067,1810459159,2023-11-27,Sagittarius
+77,P1Harmony,FNC Entertainment,Active,Boy Group,6,1,1666395,162540002,2020-10-28,Scorpio
+78,ONEUS,RBW,Active,Boy Group,8,0,1641554,369360640,2019-01-09,Capricorn
+79,Kep1er,Klap Entertainment,Active,Girl Group,6,4,1634481,488647181,2022-01-03,Capricorn
+80,CNBlue,FNC Entertainment,Active,Boy Group,35,25,1343981,287055611,2010-01-14,Capricorn
+81,VIXX,Jellyfish Entertainment,Active,Boy Group,30,7,1342848,300622762,2012-05-24,Gemini
+82,Dreamcatcher,Dreamcatcher Company,Active,Girl Group,4,0,1228151,631239773,2017-01-13,Capricorn
+83,BTOB,,Active,Boy Group,17,7,1189542,625848242,2012-03-22,Aries
+84,tripleS,MODHAUS,Active,Girl Group,4,2,1143782,182871431,2023-02-13,Aquarius
+85,Winner,YG Entertainment Inc.,Active,Boy Group,24,5,1032476,773453039,2014-08-12,Leo
+86,xikers,KQ Entertainment,Active,Boy Group,0,0,997700,119024199,2023-03-30,Aries
+87,2PM,JYP Entertainment Corp.,Active,Boy Group,41,11,969382,536059399,2008-09-04,Virgo
+88,fromis_9,ASND,Active,Girl Group,13,0,939452,371997344,2018-01-24,Aquarius
+89,ONF,WM Entertainment,Active,Boy Group,4,0,935568,132078944,2017-08-02,Leo
+90,KARA,RBW,Active,Girl Group,28,9,896926,588409208,2007-03-29,Aries
+91,Apink,IST Entertainment,Active,Girl Group,52,14,829855,966356898,2011-04-19,Aries
+92,TEMPEST,Yuehua Entertainment,Active,Boy Group,4,1,738527,81694295,2022-03-02,Pisces
+93,FTISLAND,FNC Entertainment,Active,Boy Group,17,10,707898,241471076,2007-06-07,Gemini
+94,KickFlip,JYP Entertainment Corp.,Active,Boy Group,0,1,689326,55287363,2025-01-20,Aquarius
+95,Xdinary Heroes,Studio J,Active,Boy Group,0,3,662760,161791892,2021-12-06,Sagittarius
+96,T-ara,MBK Entertainment,Active,Girl Group,25,7,642756,941624634,2009-07-29,Leo
+97,Oh My Girl,WM Entertainment,Active,Girl Group,21,5,612392,506380376,2015-04-20,Taurus
+98,Hearts2Hearts,SM Entertainment Co. Ltd.,Active,Girl Group,1,1,420032,81611425,2025-02-24,Pisces
+99,N.Flying,FNC Entertainment,Active,Boy Group,3,1,417511,154018253,2015-05-20,Taurus
+100,Billlie,Mystic Story,Active,Girl Group,1,1,379313,153862971,2021-11-10,Scorpio
+101,NiziU,JYP Entertainment + Sony Music Ent. Japan,Active,Girl Group,2,0,325434,1139651697,2020-06-30,Cancer
+102,Kiss of Life,S2 Entertainment,Active,Girl Group,3,4,296248,354431014,2023-07-05,Cancer
+103,VIVIZ,BPM Entertainment,Active,Girl Group,2,0,293938,190247189,2022-02-09,Aquarius
+104,EVERGLOW,Yuehua Entertainment,Active,Girl Group,3,0,279807,1034716924,2019-03-18,Pisces
+105,8TURN,MNH Entertainment,Active,Boy Group,0,0,266349,39928994,2023-01-30,Aquarius
+106,A.C.E,Swing Entertainment,Active,Boy Group,0,0,263092,128817417,2017-05-23,Gemini
+107,OnlyOneOf,8D Entertainment,Active,Boy Group,0,0,259944,66954509,2019-05-28,Gemini
+108,izna,WAKEONE Entertainment,Active,Girl Group,2,0,258381,72170580,2024-11-25,Sagittarius
+109,Brown Eyed Girls,Mystic Story,Active,Girl Group,12,9,252881,193963671,2006-03-02,Pisces
+110,MEOVV,The Black Label,Active,Girl Group,2,1,250118,178205531,2024-09-06,Virgo
+111,Purple Kiss,RBW,Active,Girl Group,0,0,240681,129265851,2021-03-15,Pisces
+112,Close Your Eyes,Uncore,Active,Boy Group,2,0,197268,8175635,2025-04-02,Aries
+113,UNIS,F&F Entertainment,Active,Girl Group,1,1,170182,64938997,2024-03-27,Aries
+114,EXID,Banana Culture,Active,Girl Group,22,2,147710,810132149,2012-02-16,Aquarius
+115,FIFTY FIFTY,Attrakt Creative Group,Active,Girl Group,0,3,114115,404560613,2022-11-18,Scorpio
+116,The Rose,Windfall,Active,Boy Group,0,0,104420,209840020,2017-08-03,Leo
+117,XG,XGALX,Active,Girl Group,0,0,100597,804164674,2022-03-18,Pisces
+118,KARD,DSP Media,Active,Co-ed Group,0,0,99861,745149765,2016-12-13,Cancer
+119,YOUNG POSSE,DSP Media,Active,Girl Group,0,0,29590,57884233,2023-10-18,Libra
+120,XLOV,257 Entertainment,Active,Boy Group,0,0,22342,6775056,2025-01-07,Capricorn
