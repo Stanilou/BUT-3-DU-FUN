@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8"/>
+  <title>TP1</title>
+  <!-- voir https://greensock.com/docs/v3/Installation#installer -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+
+<body>
+  <!-- dessin SVG créé et modifié par les scripts JS -->
+  <svg xmlns="http://www.w3.org/2000/svg"
+      height="60"
+      viewBox="0 0 100 16"
+      id="dessin">
+  </svg>
+
+  <!-- utilisation du mixin SVGelement -->
+  <script src="svgelement.js"></script>
+  <script src="RollingDigit.js"></script>
+  <script src="RollingNumber.js"></script>
+
+  <script>
+    // compléments à la librairie Math
+    Math.radians = (deg) => deg * Math.PI / 180
+    Math.degrees = (rad) => rad / Math.PI * 180
+
+
+    // ici, il y aura les scripts JS pour créer, modifier et animer l'image SVG (enlever ce commentaire)
+    const svg = SVGelement.fromSelector("#dessin");
+    const number = new RollingNumber(svg, 3, 8, 16);
+    number.set(8);
+  </script>
+</body>
+
+</html>

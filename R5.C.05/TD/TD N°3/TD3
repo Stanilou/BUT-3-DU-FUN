@@ -1,0 +1,268 @@
+# TD N°1 : BIG DATA - CASSANDRA
+
+## Exercise n°1
+
+#### We assume a hashing function consisting in the sum of the ASCII code of the characters. Process the hash values for the following movies: Rio, Home, Soul, Cars, Luca, Wish, Sing, Bolt, Dune, Vivo, Coco, Dumbo, Brave, Se7en, Mulan and Shrek.
+
+    - R : 0101.0010 = 82 
+    - i : 0110.1001 = 105 
+    - o : 0110.1111 = 111 
+                    = 298
+
+    - H : 0100.1000 = 72 
+    - o : 0110.1111 = 111 
+    - m : 0110.1101 = 109 
+    - e : 0110.0101 = 101 
+                    = 393
+
+    - S : 0101.0011 = 83
+    - o : 0110.1111 = 111
+    - u : 0111.0101 = 117
+    - l : 0110.1100 = 108 
+                    = 419
+
+    - Cars : 67 + 97 + 114 + 115 = 393
+    - Luca : 76 + 117 + 99 + 97 = 389
+    - Wish : 87 + 105 + 115 + 104 = 411
+    - Sing : 83 + 105 + 110 + 103 = 401
+    - Bolt : 66 + 111 + 108 + 116 = 401
+    - Dune : 68 + 117 + 110 + 101 = 396
+    - Vivo : 86 + 105 + 118 + 111 = 420
+    - Coco : 67 + 111 + 99 + 111 = 388
+    - Dumbo : 68 + 117 + 109 + 98 + 111 = 503
+    - Brave : 66 + 114 + 97 + 118 + 101 = 496
+    - Se7en : 83 + 101 + 55 + 101 + 110 = 450
+    - Mulan : 77 + 117 + 108 + 97 + 110 = 509
+    - Shrek : 83 + 104 + 114 + 101 + 107 = 509
+
+
+## Exercise n°2
+
+#### 1. Let a hash function mod n, where n is the number of servers, to be used in a DHT. If n equals to 3 with servers A (mod 3 = 0), B (mod 3 = 1) and C (mod 3 = 2), give the distribution of the previous movies.
+
+    - Server A : - Home
+                 - Cars
+                 - Wish
+                 - Dune
+                 - Vivo
+                 - Se7en
+
+
+    - Server B : - Rio
+                 - Coco
+                 - Brave
+
+
+    - Server C : - Soul
+                 - Luca
+                 - Sing
+                 - Bolt
+                 - Dumbo
+                 - Mulan
+                 - Shrek
+
+
+#### 2. We assume server C leaves the network. Give the new distribution of the elements in the DHT (with A associated to mod 2 = 0 and B to 1). Give the number of modifications
+
+    - Server A : - Rio
+                 - Dune
+                 - Vivo
+                 - Coco
+                 - Brave
+                 - Se7en
+
+
+    - Server B : - Home
+                 - Soul
+                 - Cars
+                 - Luca
+                 - Wish
+                 - Sing
+                 - Bolt
+                 - Dumbo
+                 - Mulan
+                 - Shrek
+
+
+#### 3. We assume server D integrates the network (with A, B and C). Give the new distribution of the elements in the DHT (with A associated to mod 4 = 0, B to 1, C to 2 and D to 3). Give the number of modifications
+
+    - Server A : - Dune
+                 - Vivo
+                 - Coco
+                 - Brave
+
+    - Server B : - Home
+                 - Cars
+                 - Luca
+                 - Sing
+                 - Bolt
+                 - Mulan
+                 - Shrek
+
+    - Server C : - Rio
+                 - Se7en
+
+    - Server D : - Soul
+                 - Wish
+                 - Dumbo
+
+
+## Exercise n°3
+
+#### 1. We assume Server A to be associated to the value (in degrees) 120, B to 240 and C to 360. Give the distribution of the movies on the cluster
+
+    - Rio : 298 mod 360 = 298°
+    - Home : 393 mod 360 = 33°
+    - Soul : 419 mod 360 = 59°
+    - Cars : 393 mod 360 = 33°
+    - Luca : 389 mod 360 = 29°
+    - Wish : 411 mod 360 = 51°
+    - Sing : 401 mod 360 = 41°
+    - Bolt : 401 mod 360 = 41°
+    - Dune : 396 mod 360 = 36°
+    - Vivo : 420 mod 360 = 60°
+    - Coco : 388 mod 360 = 28°
+    - Dumbo : 503 mod 360 = 143°
+    - Brave : 496 mod 360 = 136°
+    - Se7en : 450 mod 360 = 90°
+    - Mulan : 509 mod 360 = 149°
+    - Shrek : 509 mod 360 = 149°
+
+    - Server A (120°) : - Home
+                        - Soul
+                        - Cars
+                        - Luca
+                        - Wish
+                        - Sing
+                        - Bolt
+                        - Dune
+                        - Vivo
+                        - Coco
+                        - Se7en
+
+    - Server B (240°) : - Dumbo
+                        - Brave
+                        - Mulan
+                        - Shrek
+
+    - Server C (360°) : - Rio
+            
+
+#### 2. We assume server C leaves the network. Give the new distribution of the elements. Give the number of modifications.
+
+    - Server A (120°) : - Home
+                        - Soul
+                        - Cars
+                        - Luca
+                        - Wish
+                        - Sing
+                        - Bolt
+                        - Dune
+                        - Vivo
+                        - Coco
+                        - Se7en
+
+    - Server B (240°) : - Rio
+                        - Dumbo
+                        - Brave
+                        - Mulan
+                        - Shrek
+
+
+#### 3. We assume a (very) simple distribution of some virtual nodes. Give the distribution of the movies.
+
+    Server A: Server B: Server C:
+    --------- --------- ---------
+    A0: 0     B0: 12    C0: 24
+    A1: 36    B1: 48    C1: 60
+    A2: 72    B2: 84    C2: 96
+    A3: 108   B3: 120   C3: 132
+    A4: 144   B4: 156   C4: 168
+    A5: 180   B5: 192   C5: 204
+    A6: 216   B6: 228   C6: 240
+    A7: 252   B7: 264   C7: 276
+    A8: 288   B8: 300   C8: 312
+    A9: 324   B9: 336   C9: 348
+
+    - Rio : 298° = A8
+    - Home : 33° = C0
+    - Soul : 59° = B1
+    - Cars : 33° = C0
+    - Luca : 29° = C0
+    - Wish : 51° = B1
+    - Sing : 41° = A1
+    - Bolt : 41° = A1
+    - Dune : 36° = A1
+    - Vivo : 60° = C1
+    - Coco : 28° = C0
+    - Dumbo : 143° = C3
+    - Brave : 136° = A4
+    - Se7en : 90° = B2
+    - Mulan : 149° = A4
+    - Shrek : 149° = A4
+
+
+#### 4. We assume server C leaves the network. Give the new distribution of the elements.
+
+    Server A: Server B: 
+    --------- --------- 
+    A0: 0     B0: 12    
+    A1: 36    B1: 48    
+    A2: 72    B2: 84    
+    A3: 108   B3: 120   
+    A4: 144   B4: 156   
+    A5: 180   B5: 192   
+    A6: 216   B6: 228   
+    A7: 252   B7: 264  
+    A8: 288   B8: 300   
+    A9: 324   B9: 336   
+
+    - Rio : 298° = A8
+    - Home : 33° = B0
+    - Soul : 59° = B1
+    - Cars : 33° = B0
+    - Luca : 29° = B0
+    - Wish : 51° = B1
+    - Sing : 41° = A1
+    - Bolt : 41° = A1
+    - Dune : 36° = B0
+    - Vivo : 60° = B1
+    - Coco : 28° = B0
+    - Dumbo : 143° = B3
+    - Brave : 136° = B3
+    - Se7en : 90° = B2
+    - Mulan : 149° = A4
+    - Shrek : 149° = A4
+
+
+#### 5. We assume server D integrates the network (with A, B and C). Give the distribution of the movies
+
+    Server A: Server B: Server C: Server D:
+    --------- --------- --------- ---------
+    A0: 0     B0: 12    C0: 24    D6: 23
+    A1: 36    B1: 48    C1: 60    D0: 47
+    A2: 72    B2: 84    C2: 96    D7: 89
+    A3: 108   B3: 120   C3: 132   D1: 103
+    A4: 144   B4: 156   C4: 168   D8: 145
+    A5: 180   B5: 192   C5: 204   D2: 169
+    A6: 216   B6: 228   C6: 240   D9: 211
+    A7: 252   B7: 264   C7: 276   D3: 221
+    A8: 288   B8: 300   C8: 312   D4: 286
+    A9: 324   B9: 336   C9: 348   D5: 349
+
+    - Rio : 298° = 
+    - Home : 33° = 
+    - Soul : 59° = 
+    - Cars : 33° = 
+    - Luca : 29° = 
+    - Wish : 51° = 
+    - Sing : 41° = 
+    - Bolt : 41° = 
+    - Dune : 36° = 
+    - Vivo : 60° = 
+    - Coco : 28° = 
+    - Dumbo : 143° = 
+    - Brave : 136° = 
+    - Se7en : 90° = 
+    - Mulan : 149° = 
+    - Shrek : 149° = 

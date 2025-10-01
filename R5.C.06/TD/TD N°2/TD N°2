@@ -1,0 +1,170 @@
+# TD N°1 : Mise en pratique d’un ETL avec PostgreSQL
+
+
+
+## Exercice n°1 – Extraction des données
+
+
+1. Importez les deux fichiers CSV dans PostgreSQL ( COPY ou outil d’import).
+
+    Création de la table 'clients' :
+
+        CREATE TABLE clients (
+            id SERIAL PRIMARY KEY,
+            nom VARCHAR(50),
+            adresse VARCHAR(50),
+            numero_telephone VARCHAR(12)
+        );
+
+    Import du fichier 'clients.csv' :
+
+        COPY clients(id, nom, adresse, numero_telephone)
+        FROM 'C:/Users/utilisateur/Documents/BUT-3-DU-FUN/R5.C.06/TD/TD N°2/clients.csv' 
+        DELIMITER ','
+        CSV HEADER;
+
+
+    Création de la table 'ventes' :
+
+        CREATE TABLE ventes (
+            id SERIAL PRIMARY KEY,
+            id_client INTEGER,
+            id_produit INTEGER,
+            date_vente DATE,
+            montant FLOAT
+        );
+
+    Import du fichier 'ventes.csv' :
+
+        COPY ventes(id, id_client, id_produit, date_vente, montant)
+        FROM 'C:/Users/utilisateur/Documents/BUT-3-DU-FUN/R5.C.06/TD/TD N°2/ventes.csv' 
+        DELIMITER ','
+        CSV HEADER;
+
+
+
+2. Vérifiez le contenu avec quelques requêtes simples ( COUNT , DISTINCT , NULL ).
+
+    Vérification du contenu de la table 'clients' :
+
+        SELECT COUNT(id) 
+        FROM clients;
+
+
+    Vérification du contenu de la table 'ventes' :
+
+        SELECT COUNT(id) 
+        FROM ventes;
+
+
+
+3. Écrivez les requêtes suivantes :
+
+    Clients ayant acheté dans les 6 derniers mois.
+
+        SELECT c.id, c.nom
+        FROM clients c JOIN ventes v ON c.id = v.id_client
+        WHERE (NOW() - INTERVAL '6 months') <= date_vente;
+
+
+    Clients avec au moins deux achats > 1000 €.
+
+        SELECT c.id, c.nom, COUNT(v.id_client) 
+        FROM clients c JOIN ventes v ON c.id = v.id_client
+        WHERE v.montant > 1000
+        GROUP BY c.id, c.nom
+        HAVING COUNT(id) >= 2;
+
+
+    Clients n’ayant jamais acheté.
+
+        SELECT c.id, c.nom
+        FROM clients c JOIN ventes v ON c.id = v.id_client
+        WHERE c.id NOT IN (SELECT id_client FROM ventes);
+
+
+    Montant total des ventes par client.
+
+        SELECT c.id, c.nom, SUM(v.montant)
+        FROM clients c JOIN ventes v ON c.id = v.id_client;
+
+
+
+## Exercice 2 – Transformation des données
+
+
+1. Supprimez les clients avec une adresse vide ou NULL.
+
+    DELETE FROM clients 
+    WHERE adresse = '' OR adresse = NULL;
+
+
+
+2. Nettoyez les numéros de téléphone pour qu’ils soient tous au format international français ( +33XXXXXXXXX ).
+
+    UPDATE clients
+    SET numero_telephone = (
+        CASE
+            WHEN numero_telephone LIKE '0%' THEN '+33' || SUBSTRING(numero_telephone FROM 2)
+            WHEN numero_telephone LIKE '0033%' THEN '+33' || SUBSTRING(numero_telephone FROM 5)
+            WHEN numero_telephone LIKE '+33%' THEN numero_telephone
+            ELSE NULL   
+        END
+    );
+
+
+
+3. Supprimez les ventes avec des dates incohérentes (ex. ventes en 2099).   
+
+    DELETE FROM ventes 
+    WHERE date_vente > DATE(NOW());
+
+
+
+4. Remplacez tout montant négatif par 0 .
+
+    UPDATE ventes
+    SET montant = 0
+    WHERE montant < 0;
+
+
+
+5. Supprimez les doublons dans ventes (même client, produit, date, montant).
+
+    DELETE FROM ventes
+    WHERE id NOT IN (SELECT MIN(id) FROM ventes GROUP BY id_client, id_produit, date_vente, montant);
+
+
+
+## Exercice 3 – Chargement avec partitionnement
+
+
+1. Créez une table ventes_partitionnees partitionnée par année de vente ( date_vente ). Une partition pour 2023 , une pour 2024 , une pour future .
+
+    CREATE TABLE ventes_partitionnees (
+        id SERIAL PRIMARY KEY,
+        id_client INTEGER,
+        id_produit INTEGER,
+        date_vente DATE,
+        montant FLOAT
+    ) PARTITION BY RANGE (date_vente);
+
+    CREATE TABLE ventes_2023 PARTITION OF ventes_partitionnees FOR VALUES FROM ('2023-01-01') TO ('2023-12-31');
+
+    CREATE TABLE ventes_2024 PARTITION OF ventes_partitionnees FOR VALUES FROM ('2024-01-01') TO ('2024-12-31');
+
+    CREATE TABLE ventes_futures PARTITION OF ventes_partitionnees FOR VALUES FROM ('2025-01-01') TO (NOW());
+
+
+
+2. Chargez toutes les ventes nettoyées dans cette table.
+
+    INSERT INTO ventes_partitionnees (id_client, id_produit, date_vente, montant)
+    SELECT id_client, id_produit, date_vente, montant
+    FROM ventes_clean;
+
+
+
+3. Vérifiez que les lignes sont bien réparties dans les bonnes partitions.
+
+    
